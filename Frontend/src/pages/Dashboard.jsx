@@ -5,16 +5,16 @@ import api from '../api/axiosConfig';
 import './Dashboard.css';
 
 function Dashboard() {
-  const { userId } = useAuth();
+  const { userId, isLoaded } = useAuth();
   const [invoices, setInvoices] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    if (userId) {
+    if (isLoaded && userId) {
       fetchInvoices();
     }
-  }, [userId]);
+  }, [isLoaded, userId]);
 
   const fetchInvoices = async () => {
     try {
@@ -23,7 +23,11 @@ function Dashboard() {
       setLoading(false);
     } catch (err) {
       console.error("Failed to fetch invoices", err);
-      setError("Could not load invoices. Make sure your backend is running!");
+      if (err.response?.status === 401) {
+        setError("Authentication failed (401). Please try logging out and back in.");
+      } else {
+        setError("Could not load invoices. Make sure your backend is running!");
+      }
       setLoading(false);
     }
   };

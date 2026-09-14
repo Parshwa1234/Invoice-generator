@@ -1,15 +1,25 @@
-# Environment variables
-Frontend/.env
+# Environment files & secrets
+**/.env
+**/.env.*
+!**/.env.example
 
-# Backend secrets
-Backend/api/src/main/resources/application.properties
+# Microservice application properties containing credentials
+**/src/main/resources/application.properties
+!**/src/main/resources/application.properties.example
 
-# Build output
-Backend/api/target/
-Frontend/node_modules/
-Frontend/dist/
+# Build outputs
+**/target/
+**/dist/
+**/node_modules/
+*.log
 
-# IDE
+# IDE & Editor files
 .idea/
 *.iml
 .vscode/
+.DS_Store
+Thumbs.db
+
+# OS temporary files
+*.tmp
+*.bak

@@ -10,6 +10,9 @@ function App() {
   const { getToken } = useAuth();
   const location = useLocation();
 
+  // Set token getter synchronously on each render so child components have access immediately
+  setupAxiosInterceptors(getToken);
+
   useEffect(() => {
     setupAxiosInterceptors(getToken);
   }, [getToken]);

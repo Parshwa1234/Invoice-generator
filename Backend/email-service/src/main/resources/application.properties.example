@@ -1,5 +1,7 @@
-spring.application.name=api
-spring.data.mongodb.uri=YOUR_MONGODB_URI_HERE
+spring.application.name=email-service
+
+# Server port
+server.port=8083
 
 # Email Configuration
 spring.mail.host=smtp.gmail.com
@@ -9,4 +11,9 @@ spring.mail.password=YOUR_APP_PASSWORD_HERE
 spring.mail.properties.mail.smtp.auth=true
 spring.mail.properties.mail.smtp.starttls.enable=true
 
+# Eureka
+eureka.client.service-url.defaultZone=http://localhost:8761/eureka/
+eureka.instance.prefer-ip-address=true
+
+# Clerk JWT
 spring.security.oauth2.resourceserver.jwt.issuer-uri=YOUR_CLERK_ISSUER_URI_HERE
