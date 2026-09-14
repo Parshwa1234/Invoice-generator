@@ -14,7 +14,8 @@ public class Invoice {
     private String id;
     private String invoiceNumber;
     private String userId; // The business owner
-    private String clientId; // The customer
+    private String userEmail; // The business owner's email address
+    private Client client; // The customer's details (embedded)
     
     private LocalDate issueDate;
     private LocalDate dueDate;

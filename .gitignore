@@ -1,0 +1,15 @@
+# Environment variables
+Frontend/.env
+
+# Backend secrets
+Backend/api/src/main/resources/application.properties
+
+# Build output
+Backend/api/target/
+Frontend/node_modules/
+Frontend/dist/
+
+# IDE
+.idea/
+*.iml
+.vscode/
