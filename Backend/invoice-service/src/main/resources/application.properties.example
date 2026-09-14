@@ -1,0 +1,12 @@
+spring.application.name=api
+spring.data.mongodb.uri=YOUR_MONGODB_URI_HERE
+
+# Email Configuration
+spring.mail.host=smtp.gmail.com
+spring.mail.port=587
+spring.mail.username=YOUR_GMAIL_HERE
+spring.mail.password=YOUR_APP_PASSWORD_HERE
+spring.mail.properties.mail.smtp.auth=true
+spring.mail.properties.mail.smtp.starttls.enable=true
+
+spring.security.oauth2.resourceserver.jwt.issuer-uri=YOUR_CLERK_ISSUER_URI_HERE
